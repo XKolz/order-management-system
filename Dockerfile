@@ -27,7 +27,8 @@ COPY . .
 
 # Create SQLite file in case it's missing and fix permissions
 RUN touch database/database.sqlite \
-    && composer install --no-dev --optimize-autoloader \
+    # && composer install --no-dev --optimize-autoloader \
+    && composer install --optimize-autoloader \
     && chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache \
     && chmod 664 database/database.sqlite
