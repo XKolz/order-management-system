@@ -23,7 +23,7 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html/storage
+    && chmod -R 775 storage bootstrap/cache database/database.sqlite
 
 # Expose port 80 (Apache default)
 EXPOSE 80
