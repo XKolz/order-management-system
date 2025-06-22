@@ -42,7 +42,16 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # Set working directory
+# WORKDIR /var/www/html
+# Set working directory
 WORKDIR /var/www/html
+
+# Serve from Laravel's public directory
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+
+# Update Apache config
+RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
+
 
 # Copy composer from official image
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
