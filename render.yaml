@@ -1,23 +1,23 @@
 services:
   - type: web
-    name: laravel-app
+    name: order-management-api
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
+      - key: APP_NAME
+        value: OrderManager
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: false
+      - key: APP_URL
+        value: https://order-management-api.onrender.com
       - key: APP_KEY
-        value: base64:your-generated-key
+        value: base64:/UQZ4nsscfJzQlKPBkJlrkMjbDrzE6aP41E5IgGBvlY=
       - key: DB_CONNECTION
-        value: mysql
-      - key: DB_HOST
-        value: your-db-host
+        value: sqlite
       - key: DB_DATABASE
-        value: your-db-name
-      - key: DB_USERNAME
-        value: your-db-user
-      - key: DB_PASSWORD
-        value: your-db-password
+        value: /var/www/html/database/database.sqlite
+      - key: LOG_CHANNEL
+        value: stack

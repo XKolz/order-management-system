@@ -1,6 +1,6 @@
 APP_NAME=Laravel
 APP_ENV=production
-APP_KEY=base64:your-generated-key-here
+APP_KEY=base64:/UQZ4nsscfJzQlKPBkJlrkMjbDrzE6aP41E5IgGBvlY=
 APP_DEBUG=false
 APP_URL=https://your-app-name.onrender.com
 
@@ -10,6 +10,7 @@ LOG_LEVEL=info
 # Use this if you're deploying with MySQL
 
 DB_CONNECTION=sqlite
+DB_DATABASE=/var/www/html/database/database.sqlite
 
 # Session and cache (can be database or file)
 
